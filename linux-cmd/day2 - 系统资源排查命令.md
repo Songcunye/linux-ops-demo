@@ -33,7 +33,7 @@ bash
 运行
 # -h 人性化单位展示GB/MB
 df -h
-![磁盘分区整体占用排查](img/day2/df -h.png)
+![磁盘分区整体占用排查](img/day2/df_-h.png)
 输出字段说明
 Filesystem：磁盘分区设备名
 Size：分区总容量
@@ -54,7 +54,7 @@ du -sh * | sort -hr
 -s：只展示总大小，不递归输出子文件
 -h：人类可读单位
 sort -hr：从大到小排序，一眼找到占用最大文件夹
-![目录 / 文件空间细分统计](img/day2/du error.png)
+![目录 / 文件空间细分统计](img/day2/du_error.png)
 完整排障流程
 df -h 发现 / 根分区使用率 100%
 cd / 进入根目录
@@ -64,7 +64,7 @@ du -sh * | sort -hr 找出占用最大目录（一般是日志 / 安装包）
 bash
 运行
 ss -tulnp
-![端口占用查询](img/day2/ss -tulnp error.png)
+![端口占用查询](img/day2/ss_tulnp error.png)
 参数：
 -t：TCP 端口
 -u：UDP 端口
@@ -84,7 +84,7 @@ bash
 运行
 lsof -i :22
 lsof -i :80
-![端口溯源](img/day2/lsof error.png)
+![端口溯源](img/day2/lsof_error.png)
 2、查看哪个进程占用某个文件（磁盘无法卸载排障）
 bash
 运行
