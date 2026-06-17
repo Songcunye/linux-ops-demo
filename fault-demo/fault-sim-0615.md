@@ -9,7 +9,11 @@
 ### 1. 创建故障文件存放目录
 ```bash
 mkdir -p fault-demo
+### 故障未建立状态
+![故障未建立](img/fail-demo unestablish.png)
 踩坑记录：未提前创建目标目录，直接使用> 目录/文件重定向输出会提示文件不存在，mkdir -p支持递归创建多层目录，规避该问题。
+### 故障处理完成
+![故障处理成功](img/fault-demo-success.png)
 2. 筛选系统全部 error 日志，导出独立文件
 bash
 运行
