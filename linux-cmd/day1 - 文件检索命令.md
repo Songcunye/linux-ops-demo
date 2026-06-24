@@ -49,7 +49,7 @@ s/旧内容/新内容/g：全局匹配替换，g 代表一行内全部替换。
 sed 表达式与目标文件之间缺少空格，会报unknown option语法错误；
 目标文件不存在时，提示No such file or directory。
 ### sed报错演示
-![sed报错截图](img/sed error.png)
+![sed报错截图](img/sed_error.png)
 四、awk 日志字段统计（面试高频：IP 访问量统计）
 标准统计组合命令
 bash
@@ -62,7 +62,7 @@ uniq -c：统计重复内容出现次数，输出格式：次数 对应内容。
 实操输出示例
 文件内容warn test log，执行后输出 1 warn，代表首字段 warn 仅出现 1 次。
 ### awk报错演示
-![awk报错截图](img/awk error.png)
+![awk报错截图](img/awk_error.png)
 企业用途
 统计网站各客户端 IP 访问频次，快速识别恶意爬虫、高频攻击 IP。
 权限问题总结

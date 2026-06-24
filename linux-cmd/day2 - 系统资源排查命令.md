@@ -33,7 +33,7 @@ bash
 运行
 # -h 人性化单位展示GB/MB
 df -h
-![磁盘分区整体占用排查](img/day2/df_-h.png)
+![磁盘分区整体占用排查](img/day2/df_h.png)
 输出字段说明
 Filesystem：磁盘分区设备名
 Size：分区总容量
@@ -64,7 +64,7 @@ du -sh * | sort -hr 找出占用最大目录（一般是日志 / 安装包）
 bash
 运行
 ss -tulnp
-![端口占用查询](img/day2/ss_tulnp error.png)
+![端口占用查询](img/day2/ss_tulnp_error.png)
 参数：
 -t：TCP 端口
 -u：UDP 端口
