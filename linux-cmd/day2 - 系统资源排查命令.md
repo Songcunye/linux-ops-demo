@@ -27,9 +27,9 @@ top -p 1234
 top -d 2
 踩坑记录
 普通用户执行 top 只能查看自身进程，系统内核进程需要 sudo 提权查看完整信息。
-二、df 命令：磁盘分区整体占用排查
-基础命令
-bash
+##二、df 命令：磁盘分区整体占用排查
+###基础命令
+```bash
 运行
 # -h 人性化单位展示GB/MB
 df -h
@@ -43,9 +43,9 @@ Use%：磁盘使用率（线上预警阈值 85%）
 Mounted on：分区挂载目录
 企业场景
 服务器磁盘爆满告警，先用 df -h 快速定位哪个分区满了。
-三、du 命令：目录 / 文件空间细分统计
+##三、du 命令：目录 / 文件空间细分统计
 df 看整体分区，du 看单个文件夹占用大小，二者搭配使用
-bash
+```bash
 运行
 # 查看当前目录下各文件夹占用，人性化单位，按大小排序
 du -sh * | sort -hr
@@ -59,9 +59,9 @@ sort -hr：从大到小排序，一眼找到占用最大文件夹
 df -h 发现 / 根分区使用率 100%
 cd / 进入根目录
 du -sh * | sort -hr 找出占用最大目录（一般是日志 / 安装包）
-四、ss 命令：端口占用查询（netstat 替代品，更快）
+##四、ss 命令：端口占用查询（netstat 替代品，更快）
 1、查看本机所有监听端口
-bash
+```bash
 运行
 ss -tulnp
 ![端口占用查询](img/day2/ss_tulnp_error.png)
@@ -78,19 +78,19 @@ bash
 ss -tulnp | grep :22
 # 过滤80端口
 ss -tulnp | grep :80
-五、lsof 命令：文件 / 端口占用溯源
+##五、lsof 命令：文件 / 端口占用溯源
 1、查看哪个进程占用指定端口
-bash
+```bash
 运行
 lsof -i :22
 lsof -i :80
 ![端口溯源](img/day2/lsof_error.png)
 2、查看哪个进程占用某个文件（磁盘无法卸载排障）
-bash
+```bash
 运行
 lsof /var/log/messages
 3、查看用户所有进程打开文件
-bash
+```bash
 运行
 lsof -u root
 ![端口溯源](img/day2/lsof.png)
