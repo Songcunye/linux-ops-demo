@@ -1,4 +1,4 @@
-ql-notes/day1-mysql库表CRUD与事务.md 完整成品文档（直接复制进文件使用）
+
 # Day1 MariaDB 库表创建、CRUD、事务实操笔记
 ## 环境说明
 操作环境：CentOS7 虚拟机 MariaDB 5.5.68
