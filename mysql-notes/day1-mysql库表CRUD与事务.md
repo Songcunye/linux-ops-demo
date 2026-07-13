@@ -1,4 +1,4 @@
-ql-notes/day1-mysql库表CRUD与事务.md 完整成品文档（直接复制进文件使用）
+
 # Day1 MariaDB 库表创建、CRUD、事务实操笔记
 ## 环境说明
 操作环境：CentOS7 虚拟机 MariaDB 5.5.68
@@ -41,7 +41,7 @@ desc sys_user;
 2. `varchar(30) not null`：账号不能为空，限制最长30字符；
 3. `char(11)`：手机号固定11位字符存储。
 
-## 三、CRUD 增删改查全套实操（面试必考核心）
+## 三、CRUD 增删改查全套实操
 ### 1. 新增数据 insert
 ```sql
 -- 插入2条运维测试账号
