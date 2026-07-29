@@ -1,0 +1,21 @@
+groups:
+- name: server-alert
+  rules:
+  # CPU持续高于80%告警
+  - alert: HighCpuUsage
+    expr: 100 - (avg by(instance) (irate(node_cpu_seconds_total{mode="idle"}[5m]))) > 80
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      summary: "服务器CPU使用率过高"
+      description: "实例 {{ $labels.instance }} CPU占用持续高于80%，当前值：{{ $value }}"
+
+  # 内存高于85%告警
+  - alert: HighMemoryUsage
+    expr: 100 - (100 * node_memory_MemFree_bytes / node_memory_MemTotal_bytes) > 85
+    for: 2m
+    labels:
+      severity: warning
+    annotations:
+      summary: "服务器内存使用率过高"
